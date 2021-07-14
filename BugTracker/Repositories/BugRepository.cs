@@ -75,7 +75,7 @@ namespace BugTracker.Repositories
 		{
 			try
 			{
-				var bug = _context.Bugs.FirstOrDefault(b => b.Id == id);
+				var bug = await _context.Bugs.FirstOrDefaultAsync(b => b.Id == id);
 				if (bug != null)
 				{
 					_context.Remove(bug);
